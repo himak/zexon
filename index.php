@@ -1,49 +1,30 @@
 <?php
+declare(strict_types=1);
 
-class Truck {
+namespace zexon;
 
-    private $settings;
+require_once 'Vehicle.php';
+require_once 'Truck.php';
+require_once 'Motorcycle.php';
 
-    public function __construct( $settings ) {
-        $this->setSettings( $settings );
-    }
+$truck = new Truck(
+    settings: [
+        'price' => 32000,
+        'driver' => [
+            'firstname' => 'John',
+            'lastname' => 'Doe',
+            'age' => 21
+        ]
+    ]
+);
 
-    protected function setSettings(array $settings) {
-        $this->settings = $settings;
+$motorcycle = new Motorcycle(
+    settings: [
+        'price' => 12300,
+    ]
+);
 
-        return $this;
-    }
+var_dump($truck->getDriver());
+var_dump($motorcycle);
 
-    protected function driver() {
-        return $this->settings['driver'];
-    }
 
-    protected function calculate($distance) {
-        return $this->settings['price'] * $distance;
-    }
-
-}
-
-class Motorcycle {
-
-    private $settings;
-
-    public function __construct( $settings ) {
-        $this->setSettings( $settings );
-    }
-
-    protected function calculate($distance) {
-        return $this->settings['price'] * $distance;
-    }
-
-    protected function payment(): void {
-        //...
-    }
-
-    protected function setSettings(array $settings) {
-        $this->settings = $settings;
-
-        return $this;
-    }
-
-}
