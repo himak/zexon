@@ -41,4 +41,25 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Define Users
+     *
+     * @var array|array[]
+     */
+    protected array $users = [
+        [ 'id' => 5, 'name' => 'Richard', 'score' => 505, 'active' => true],
+        [ 'id' => 8, 'name' => 'Peter', 'score' => 704, 'active' => false],
+        [ 'id' => 9, 'name' => 'Tomáš', 'score' => 104, 'active' => true],
+        [ 'id' => 10, 'name' => 'Adam', 'score' => 557, 'active' => true],
+    ];
+
+    /**
+     * Get all Users
+     * @return array|array[]
+     */
+    public function getUsers(): array
+    {
+        return $this->users;
+    }
 }
