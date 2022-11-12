@@ -1,23 +1,20 @@
 <?php
 
-function calculatePrice($title, $price, $discount = 0.0)
+/**
+ * Calculate price
+ *
+ * @param string $title
+ * @param float $price
+ * @param float $discount
+ * @return array
+ */
+function calculatePrice(string $title, float $price, float $discount = 0.0): array
 {
-    if (!is_float($price)) {
-        throw new Exception('Invalid price value.');
-    }
-
-    if (!is_float($discount)) {
-        throw new Exception('Invalid discount value.');
-    }
-
-    if (!is_string($title)) {
-        throw new Exception('Invalid title value.');
-    }
-
-    $attributes = array();
-    $attributes["price"] = $price;
-    $attributes["discount"] = $discount;
-    $attributes["title"] = $title;
-
-    return $attributes;
+    return [
+        'title' => $title,
+        'price' => $price,
+        'discount' => $discount
+    ];
 }
+
+var_dump(calculatePrice('Create website', 2500,1.2));
