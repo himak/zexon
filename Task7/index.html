@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task 7 | ZEXON</title>
+
+    <style>
+        .box {
+            border: 1px solid #003366;
+            padding: 1em;
+        }
+
+        .text-primary { color: #01b0d1 }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+
+    <div class="box">
+        <h1>ZEXON</h1>
+        <h2 class="text-primary">Task 7</h2>
+        <p>This is example text without link.</p>
+        <p>This is example text with link. Please visit <a href="https://www.zexon.sk">ZEXON</a></p>
+    </div>
+
+    <script>
+
+	    $($('.box')).hide();
+
+	    setTimeout(function () {
+		    $('.box').show();
+		    $('.box').addClass('text-primary');
+
+            if ($(el).find('a').length) {
+			    console.log($(el).find('a'));
+		    } else {
+			    console.error('there are no links!');
+		    }
+
+	    }, 200);
+
+    </script>
+
+</body>
+</html>
