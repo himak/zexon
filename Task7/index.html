@@ -16,34 +16,35 @@
         .text-primary { color: #01b0d1 }
     </style>
 
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-
-
 </head>
 <body>
 
     <div class="box">
         <h1>ZEXON</h1>
-        <h2 class="text-primary">Task 7</h2>
+        <h2>Task 7</h2>
         <p>This is example text without link.</p>
         <p>This is example text with link. Please visit <a href="https://www.zexon.sk">ZEXON</a></p>
     </div>
 
     <script>
 
-	    $($('.box')).hide();
+        const box = document.querySelector('.box')
+        box.style.display = 'none'
 
-	    setTimeout(function () {
-		    $('.box').show();
-		    $('.box').addClass('text-primary');
+        setTimeout(function () {
 
-            if ($(el).find('a').length) {
-			    console.log($(el).find('a'));
-		    } else {
-			    console.error('there are no links!');
-		    }
+            box.style.display = 'block'
+            box.classList.add('text-primary')
 
-	    }, 200);
+            const el = box
+
+            if(el.find('a')) {
+	            console.log(el.find('a'));
+            }
+            else {
+	            console.error('there are no links!');
+            }
+        }, 200);
 
     </script>
 
